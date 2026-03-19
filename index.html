@@ -9,6 +9,68 @@
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
 <style>
+.contact-form {
+    padding: 25px;
+    border-radius: 16px;
+    background: rgba(255,255,255,0.03);
+    backdrop-filter: blur(12px);
+}
+
+/* INPUT GROUP (floating labels) */
+.input-group {
+    position: relative;
+    margin-bottom: 25px;
+}
+
+.input-group input,
+.input-group textarea {
+    width: 100%;
+    padding: 14px;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    background: rgba(255,255,255,0.05);
+    color: white;
+    font-size: 14px;
+}
+
+/* LABEL */
+.input-group label {
+    position: absolute;
+    left: 14px;
+    top: 14px;
+    color: #94a3b8;
+    pointer-events: none;
+    transition: 0.3s ease;
+    background: transparent;
+}
+
+/* FLOAT EFFECT */
+.input-group input:focus + label,
+.input-group input:valid + label,
+.input-group textarea:focus + label,
+.input-group textarea:valid + label {
+    top: -8px;
+    left: 10px;
+    font-size: 12px;
+    color: #a78bfa;
+    background: #0f172a;
+    padding: 0 5px;
+}
+
+/* FOCUS GLOW */
+.input-group input:focus,
+.input-group textarea:focus {
+    box-shadow: 0 0 0 2px #6366f1;
+}
+
+/* BUTTON UPGRADE */
+.contact-form .btn {
+    width: 100%;
+    text-align: center;
+    font-weight: 500;
+}
+	
 html {
     scroll-behavior: smooth;
 }
@@ -231,13 +293,25 @@ footer {
     <p>Phone: +65 6291 3455</p>
 	<p>Address: 52 Ubi Ave 3, #05-45 Frontier, Singapore 408867</p>
 	<form class="contact-form" id="contact-form">
-    <input type="text" name="name" placeholder="Your Name" required><br>
-    <input type="email" name="email" placeholder="Your Email" required><br>
-    <textarea name="message" placeholder="Your Message" rows="5" required></textarea><br>
-    <button type="submit" class="btn">Send Message</button>
-</form>
+   	 <div class="input-group">
+        	<input type="text" name="name" required>
+        	<label>Your Name</label>
+   	 </div>
 
-<p id="form-status"></p>
+    	<div class="input-group">
+    	    <input type="email" name="email" required>
+    	    <label>Your Email</label>
+  	  </div>
+
+  	  <div class="input-group">
+  	      <textarea name="message" rows="5" required></textarea>
+  	      <label>Your Message</label>
+ 	   </div>
+
+  	  <button type="submit" class="btn">Send Message ✨</button>
+	</form>
+
+	<p id="form-status"></p>
 </section>
 
 </div>
