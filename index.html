@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Boonliver International Pte. Ltd.</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background: #0f172a;
+    color: white;
+}
+
+/* NAVBAR */
+nav {
+    position: sticky;
+    top: 0;
+    backdrop-filter: blur(10px);
+    background: rgba(255,255,255,0.05);
+    padding: 15px;
+    text-align: center;
+    z-index: 1000;
+}
+
+nav a {
+    color: #e5e7eb;
+    margin: 0 15px;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+nav a:hover {
+    color: #a78bfa;
+}
+
+/* HEADER */
+header {
+    text-align: center;
+    padding: 80px 20px;
+    background: radial-gradient(circle at top, #4f46e5, #0f172a);
+}
+
+header h1 {
+    font-size: 3em;
+}
+
+header p {
+    color: #cbd5f5;
+}
+
+/* HERO */
+.hero {
+    text-align: center;
+    padding: 60px 20px;
+}
+
+.hero h2 {
+    font-size: 2.5em;
+}
+
+.hero p {
+    color: #cbd5f5;
+}
+
+/* BUTTON */
+.btn {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 12px 28px;
+    background: linear-gradient(135deg, #6366f1, #a855f7);
+    border-radius: 999px;
+    color: white;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    transform: scale(1.05);
+}
+
+/* CONTAINER */
+.container {
+    max-width: 1100px;
+    margin: auto;
+    padding: 40px 20px;
+}
+
+/* SERVICES */
+.services {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.service-box {
+    flex: 1;
+    min-width: 250px;
+    padding: 25px;
+    border-radius: 16px;
+    background: rgba(255,255,255,0.05);
+    backdrop-filter: blur(10px);
+    transition: 0.4s;
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+.service-box.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.service-box:hover {
+    transform: translateY(-8px) scale(1.02);
+}
+
+/* SECTION TITLES */
+h2 {
+    margin-bottom: 10px;
+}
+
+/* CONTACT */
+#contact p {
+    color: #cbd5f5;
+}
+
+/* FOOTER */
+footer {
+    text-align: center;
+    padding: 20px;
+    background: #020617;
+    color: #94a3b8;
+}
+
+/* MOBILE */
+@media(max-width: 768px) {
+    header h1 {
+        font-size: 2em;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+    <a href="#home">Home</a>
+    <a href="#about">About</a>
+    <a href="#services">Products</a>
+    <a href="#contact">Contact</a>
+</nav>
+
+<header id="home">
+    <h1>Boonliver International Pte. Ltd.</h1>
+    <p>“From Source to Shelf — Seamlessly.”</p>
+</header>
+
+<section class="hero">
+    <h2>Welcome to the Boonliver International Official Website!</h2>
+    <p>Buy cultured milk, fresh milk, yogurt, ice-cream, and so much more! All of which only at Boonliver International!</p>
+    <a href="#services" class="btn">Take a look at our products!</a>
+</section>
+
+<div class="container">
+
+<section id="about">
+    <h2>About Us</h2>
+    <p>Boonliver International Pte. Ltd. is a Singapore-based company specializing in wholesale trade and distribution. Since our establishment in 2015, we have been committed to providing reliable sourcing and efficient delivery of a wide range of products to businesses across the region.</p>
+	<p>With a strong focus on quality and consistency, we work closely with suppliers and partners to ensure that our customers receive dependable products and timely service. Our operations are built on professionalism, integrity, and a dedication to meeting the evolving needs of the market.</p>
+	<p>At Boonliver, we take pride in supporting our clients with flexible solutions, whether through product distribution, logistics support, or tailored supply arrangements. Our team is driven by a simple goal: to deliver value and build long-term partnerships through trust and performance.</p>
+	<p>As we continue to grow, we remain committed to maintaining high standards in everything we do—ensuring that our customers can rely on us every step of the way.</p>
+</section><br>
+
+<section id="services">
+    <h2>Our Products</h2>
+    <div class="services">
+        <div class="service-box">🍹 <h3>Cultured Milk</h3><p>NIL</p></div>
+        <div class="service-box">🥤 <h3>Yogurt</h3><p>NIL</p></div>
+        <div class="service-box">🍦 <h3>Ice-Cream</h3><p>NIL</p></div>
+		<div class="service-box">🥛 <h3>Fresh Milk</h3><p>NIL</p></div>
+		<div class="service-box">🍪 <h3>Snacks</h3><p>NIL</p></div>
+		<div class="service-box">🧋 <h3>Beverages</h3><p>NIL</p></div>
+    </div>
+</section><br>
+
+<section id="contact">
+    <h2>Contact Us</h2>
+    <p>Email: admin@boonliver.com</p>
+    <p>Phone: +65 6291 3455</p>
+	<p>Address: 52 Ubi Ave 3, #05-45 Frontier, Singapore 408867</p>
+</section>
+
+</div>
+
+<footer>
+    <p>&copy; 2026 Boonliver International. All rights reserved.</p>
+</footer>
+
+<script>
+/* SCROLL ANIMATION */
+const boxes = document.querySelectorAll('.service-box');
+
+window.addEventListener('scroll', () => {
+    const trigger = window.innerHeight * 0.85;
+
+    boxes.forEach(box => {
+        const top = box.getBoundingClientRect().top;
+
+        if(top < trigger) {
+            box.classList.add('show');
+        }
+    });
+});
+</script>
+
+</body>
+</html>
