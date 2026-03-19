@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Boonliver International Pte. Ltd.</title>
@@ -229,6 +230,14 @@ footer {
     <p>Email: administrator@boonliver.com</p>
     <p>Phone: +65 6291 3455</p>
 	<p>Address: 52 Ubi Ave 3, #05-45 Frontier, Singapore 408867</p>
+	<form class="contact-form" id="contact-form">
+    <input type="text" name="name" placeholder="Your Name" required>
+    <input type="email" name="email" placeholder="Your Email" required>
+    <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+    <button type="submit" class="btn">Send Message</button>
+</form>
+
+<p id="form-status"></p>
 </section>
 
 </div>
@@ -251,6 +260,27 @@ window.addEventListener('scroll', () => {
             box.classList.add('show');
         }
     });
+});
+	(function(){
+    emailjs.init(vnxLvNvG94Zd1tQQE);
+})();
+
+const form = document.getElementById('contact-form');
+const statusText = document.getElementById('form-status');
+
+form.addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    statusText.textContent = "Sending...";
+
+    emailjs.sendForm(service_g7sfgnv, template_yqcyimt, this)
+        .then(() => {
+            statusText.textContent = "Message sent successfully! 🚀";
+            form.reset();
+        }, (error) => {
+            statusText.textContent = "Failed to send message ❌";
+            console.log(error);
+        });
 });
 </script>
 
